@@ -18,6 +18,10 @@ wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd6
 sudo cp minikube-linux-amd64 /usr/local/bin/minikube
 sudo chmod +x /usr/local/bin/minikube
 
+sudo usermod -aG docker $USER && newgrp docker
+minikube start
+minikube addons enable ingress
+
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
