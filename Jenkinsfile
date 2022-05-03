@@ -26,9 +26,10 @@ pipeline{
           echo 'Building Docker Image'
 
           echo "CURRENT VERSION: ${SPRING_VERSION}"
-          script {
-            dockerImage = docker.build registry + ":$SPRING_VERSION"
-          }
+          sh "docker build -t spring-microservice:${SPRING_VERSION} ."
+          //script {
+          //  dockerImage = docker.build registry + ":$SPRING_VERSION"
+          //}
         }
       }
     }
