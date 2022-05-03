@@ -18,8 +18,7 @@ pipeline{
         echo "Building project"
         
         echo "Hello World to Build stage"
-        sh "cd spring-boot-docker"
-        sh "./gradlew build && java -jar build/libs/gs-spring-boot-docker-0.1.0.jar"
+        sh "cd spring-boot-docker && ./gradlew build && java -jar build/libs/gs-spring-boot-docker-0.1.0.jar"
       }
     }
     stage('Build Docker Image') {
