@@ -1,4 +1,4 @@
-def SPRING_VERSION = "X.X.X"
+def SPRING_VERSION = "0.0.1"
 
 pipeline{
   agent any
