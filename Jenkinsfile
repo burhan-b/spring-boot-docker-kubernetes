@@ -5,11 +5,6 @@ pipeline{
   registryCredential = 'burhandocker2021'
   dockerImage = ''
   agent any
-  stage('Cloning our Git') {
-    steps {
-      git 'https://github.com/burhan-b/spring-boot-docker-kubernetes.git'
-    }
-  }
   stages {
     stage("Build project") {
       steps {
