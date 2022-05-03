@@ -8,11 +8,11 @@ pipeline{
   }
   agent any
   stages {
-    stage('Cloning our Git') {
-      steps {
-        git 'https://github.com/burhan-b/spring-boot-docker-kubernetes.git'
-      }
-    }
+    //stage('Cloning our Git') {
+    //  steps {
+    //    git 'https://github.com/burhan-b/spring-boot-docker-kubernetes.git'
+    //  }
+    //}
     stage("Build project") {
       steps {
         echo "Building project"
