@@ -21,7 +21,7 @@ pipeline{
           //        returnStdout: true).trim()
 
           echo "CURRENT VERSION: ${SPRING_VERSION}"
-          sh "docker build -t spring-microservice:${SPRING_VERSION} ."
+          sh "docker build -t spring-microservice:${SPRING_VERSION} ./spring-boot-docker/"
         }
       }
     }
