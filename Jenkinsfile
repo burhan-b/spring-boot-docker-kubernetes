@@ -4,29 +4,15 @@ pipline{
     stage("build project") {
       steps {
          // git 'https://github.com/denizturkmen/SpringBootMysqlCrud.git'
-          echo "Java VERSION"
-          sh 'java -version'
-          echo "Maven VERSION"
-          sh 'mvn -version'
-          echo 'building project...'
-          sh "mvn compile"
-          sh "mvn package"
-          //sh "mvn test"
-          sh "mvn clean install"
+          echo "Building project"
+          echo "Hellow World to Build stage"
       }
     }
     stage("deploy project") {
       steps {
          // git 'https://github.com/denizturkmen/SpringBootMysqlCrud.git'
-          echo "Java VERSION"
-          sh 'java -version'
-          echo "Maven VERSION"
-          sh 'mvn -version'
-          echo 'building project...'
-          sh "mvn compile"
-          sh "mvn package"
-          //sh "mvn test"
-          sh "mvn clean install"
+          echo "Deploying project"
+          echo "Hellow World to Deploy stage"
       }
     }
   }
