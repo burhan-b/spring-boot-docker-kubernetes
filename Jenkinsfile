@@ -1,7 +1,15 @@
 def SPRING_VERSION = "0.0.1"
 
 pipeline{
+  registry = "burhandocker2021/spring-microservice"
+  registryCredential = 'burhandocker2021'
+  dockerImage = ''
   agent any
+  stage('Cloning our Git') {
+    steps {
+      git 'https://github.com/burhan-b/spring-boot-docker-kubernetes.git'
+    }
+  }
   stages {
     stage("Build project") {
       steps {
@@ -16,7 +24,9 @@ pipeline{
           echo 'Building Docker Image'
 
           echo "CURRENT VERSION: ${SPRING_VERSION}"
-          sh "docker build -t spring-microservice:${SPRING_VERSION} ."
+          script {
+            dockerImage = docker.build registry + ":$SPRING_VERSION"
+          }
         }
       }
     }
