@@ -16,9 +16,9 @@ pipeline{
           echo 'Building Docker Image'
 
           // Getting project version
-          SPRING_VERSION = sh(
-                  script: './gradlew -q printVersion',
-                  returnStdout: true).trim()
+          //SPRING_VERSION = sh(
+          //        script: './gradlew -q printVersion',
+          //        returnStdout: true).trim()
 
           echo "CURRENT VERSION: ${SPRING_VERSION}"
           sh "docker build -t spring-microservice:${SPRING_VERSION} ."
